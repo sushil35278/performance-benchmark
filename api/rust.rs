@@ -33,15 +33,18 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
     let count = sieve(limit);
     let duration = start.elapsed();
 
-    let response_body = json!({
+    let response_data = json!({
         "language": "Rust",
         "time": duration.as_secs_f64(),
         "count": count,
         "limit": limit
     });
 
+    let body = serde_json::to_string(&response_data)?;
+
     Ok(Response::builder()
         .status(StatusCode::OK)
         .header("Content-Type", "application/json")
-        .body(Body::Text(response_body.to_string()))?)
+        .header("Access-Control-Allow-Origin", "*")
+        .body(Body::from(body))?)
 }
