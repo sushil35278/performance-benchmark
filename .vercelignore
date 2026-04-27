@@ -18,19 +18,5 @@ run_benchmark.py
 .DS_Store
 .env*.local
 
-# Source code that isn't needed for the final bundle
-app/
-components/
-public/
-tsconfig.json
-next.config.mjs
-tailwind.config.ts
-postcss.config.mjs
-package-lock.json
-package.json
-go.mod
-Cargo.toml
-Cargo.lock
-
 # Ensure api directory is NOT ignored
 !api/
