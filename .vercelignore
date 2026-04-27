@@ -19,8 +19,8 @@ run_benchmark.py
 .env*.local
 
 # Compiled binaries and large folders
-/target
-/api/target
+target/
+api/target/
 **/__pycache__/
 *.pyc
 *.pyo
@@ -31,7 +31,7 @@ run_benchmark.py
 !package-lock.json
 !vercel.json
 !next.config.mjs
-!api/pyproject.toml
+!Cargo.toml
 
 # Ensure api directory is NOT ignored
 !api/
