@@ -18,5 +18,20 @@ run_benchmark.py
 .DS_Store
 .env*.local
 
+# Compiled binaries and large folders
+/target
+/api/target
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ensure configuration files are NOT ignored for detection
+!package.json
+!package-lock.json
+!vercel.json
+!next.config.mjs
+!api/pyproject.toml
+
 # Ensure api directory is NOT ignored
 !api/
