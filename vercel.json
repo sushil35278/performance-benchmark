@@ -5,10 +5,11 @@
     "api/php.php": { "runtime": "vercel-php@0.9.0" },
     "api/rust.rs": { "runtime": "vercel-rust@4.0.11" }
   },
-  "rewrites": [
-    { "source": "/api/python", "destination": "/api/python.py" },
-    { "source": "/api/php", "destination": "/api/php.php" },
-    { "source": "/api/go", "destination": "/api/go.go" },
-    { "source": "/api/rust", "destination": "/api/rust.rs" }
+  "routes": [
+    { "src": "/api/python", "dest": "/api/python.py" },
+    { "src": "/api/php", "dest": "/api/php.php" },
+    { "src": "/api/go", "dest": "/api/go.go" },
+    { "src": "/api/rust", "dest": "/api/rust.rs" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
