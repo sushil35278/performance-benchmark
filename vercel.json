@@ -1,38 +1,38 @@
 {
   "functions": {
-    "api/python.py": {
+    "api/python/index.py": {
       "maxDuration": 10,
-      "includeFiles": "api/python.py"
+      "includeFiles": "api/python/index.py"
     },
-    "api/go.go": {
+    "api/go/index.go": {
       "maxDuration": 10,
-      "includeFiles": "api/go.go"
+      "includeFiles": "api/go/index.go"
     },
-    "api/php.php": {
+    "api/php/index.php": {
       "runtime": "vercel-php@0.9.0",
-      "includeFiles": "api/php.php"
+      "includeFiles": "api/php/index.php"
     },
-    "api/rust.rs": {
+    "api/rust/index.rs": {
       "maxDuration": 10,
-      "includeFiles": "api/rust.rs"
+      "includeFiles": "api/rust/index.rs"
     }
   },
   "rewrites": [
     {
       "source": "/api/python",
-      "destination": "/api/python.py"
+      "destination": "/api/python/index.py"
     },
     {
       "source": "/api/php",
-      "destination": "/api/php.php"
+      "destination": "/api/php/index.php"
     },
     {
       "source": "/api/go",
-      "destination": "/api/go.go"
+      "destination": "/api/go/index.go"
     },
     {
       "source": "/api/rust",
-      "destination": "/api/rust.rs"
+      "destination": "/api/rust/index.rs"
     }
   ]
 }

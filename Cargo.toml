@@ -11,4 +11,4 @@ serde_json = "1.0"
 
 [[bin]]
 name = "rust"
-path = "api/rust.rs"
+path = "api/rust/index.rs"
