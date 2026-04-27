@@ -1,0 +1,5 @@
+node_modules/
+.next/
+performance_test/
+../../node_modules/
+../../.next/

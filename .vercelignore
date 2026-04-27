@@ -1,18 +1,9 @@
-# Ignore everything by default
 node_modules/
-.next/
-out/
-build/
-dist/
-
-# Ignore project files not needed for deployment
 performance_test/
+.git/
+.vercel/
 run_benchmark.py
 Cargo.lock
 go.sum
 *.log
 .DS_Store
-
-# Next.js files that Vercel handles itself
-.vercel
-next-env.d.ts

@@ -1,9 +1,17 @@
 {
   "functions": {
-    "api/python.py": { "maxDuration": 10 },
-    "api/go.go": { "maxDuration": 10 },
-    "api/php.php": { "runtime": "vercel-php@0.9.0" },
-    "api/rust.rs": { "runtime": "vercel-rust@4.0.11" }
+    "api/python.py": {
+      "maxDuration": 10
+    },
+    "api/go.go": {
+      "maxDuration": 10
+    },
+    "api/php.php": {
+      "runtime": "vercel-php@0.9.0"
+    },
+    "api/rust.rs": {
+      "runtime": "vercel-rust@4.0.11"
+    }
   },
   "rewrites": [
     { "source": "/api/python", "destination": "/api/python.py" },
