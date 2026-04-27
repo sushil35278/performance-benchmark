@@ -1,0 +1,14 @@
+{
+  "functions": {
+    "api/python.py": { "runtime": "vercel-python@0.1.0" },
+    "api/php.php": { "runtime": "vercel-php@0.7.0" },
+    "api/go.go": { "runtime": "vercel-go@0.1.0" },
+    "api/rust.rs": { "runtime": "vercel-rust@0.1.0" }
+  },
+  "rewrites": [
+    { "source": "/api/python", "destination": "/api/python.py" },
+    { "source": "/api/php", "destination": "/api/php.php" },
+    { "source": "/api/go", "destination": "/api/go.go" },
+    { "source": "/api/rust", "destination": "/api/rust.rs" }
+  ]
+}
