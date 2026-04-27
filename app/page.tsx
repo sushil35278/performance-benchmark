@@ -38,18 +38,25 @@ export default function Home() {
     try {
       const start = Date.now();
       const res = await fetch(lang.endpoint);
-      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+      if (!res.ok) {
+        const errorText = await res.text();
+        throw new Error(`HTTP ${res.status}: ${errorText.slice(0, 100)}`);
+      }
       const data = await res.json();
       
       setResults((prev) => ({
         ...prev,
         [lang.name]: { ...data, status: "completed" },
       }));
-    } catch (error) {
+    } catch (error: any) {
       console.error(`Benchmark failed for ${lang.name}:`, error);
       setResults((prev) => ({
         ...prev,
-        [lang.name]: { ...prev[lang.name], status: "error" },
+        [lang.name]: { 
+          ...prev[lang.name], 
+          status: "error",
+          time: 0 // Ensure time is 0 for error states
+        },
       }));
     }
   };
@@ -133,10 +140,15 @@ export default function Home() {
                     <span className="text-red-500 text-xs font-mono ml-2">ERROR</span>
                   )}
                 </div>
-                {isCompleted && (
+                {isCompleted ? (
                   <div className="text-right">
                     <span className="text-slate-400 text-sm block">Time Taken</span>
                     <span className="font-mono text-2xl text-cyan-400">{result.time.toFixed(4)}s</span>
+                  </div>
+                ) : result.status === "error" && (
+                  <div className="text-right">
+                    <span className="text-red-500 text-xs block">Failed</span>
+                    <span className="text-red-400 text-xs font-mono">Check Console</span>
                   </div>
                 )}
               </div>

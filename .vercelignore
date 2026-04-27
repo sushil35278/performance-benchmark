@@ -1,0 +1,14 @@
+node_modules
+performance_test
+app
+components
+public
+.next
+.git
+run_benchmark.py
+package-lock.json
+tsconfig.json
+next.config.mjs
+tailwind.config.ts
+postcss.config.mjs
+README.md
