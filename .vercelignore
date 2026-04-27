@@ -1,14 +1,18 @@
-node_modules
-performance_test
-app
-components
-public
-.next
-.git
+# Ignore everything by default
+node_modules/
+.next/
+out/
+build/
+dist/
+
+# Ignore project files not needed for deployment
+performance_test/
 run_benchmark.py
-package-lock.json
-tsconfig.json
-next.config.mjs
-tailwind.config.ts
-postcss.config.mjs
-README.md
+Cargo.lock
+go.sum
+*.log
+.DS_Store
+
+# Next.js files that Vercel handles itself
+.vercel
+next-env.d.ts
