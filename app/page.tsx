@@ -38,6 +38,7 @@ export default function Home() {
     try {
       const start = Date.now();
       const res = await fetch(lang.endpoint);
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       const data = await res.json();
       
       setResults((prev) => ({
@@ -45,6 +46,7 @@ export default function Home() {
         [lang.name]: { ...data, status: "completed" },
       }));
     } catch (error) {
+      console.error(`Benchmark failed for ${lang.name}:`, error);
       setResults((prev) => ({
         ...prev,
         [lang.name]: { ...prev[lang.name], status: "error" },
@@ -127,6 +129,9 @@ export default function Home() {
                 <div className="flex items-center gap-2">
                   <span className={`w-3 h-3 rounded-full ${lang.color}`} />
                   <span className="font-bold text-xl">{lang.name}</span>
+                  {result.status === "error" && (
+                    <span className="text-red-500 text-xs font-mono ml-2">ERROR</span>
+                  )}
                 </div>
                 {isCompleted && (
                   <div className="text-right">
