@@ -3,7 +3,7 @@
     "api/python.py": { "maxDuration": 10 },
     "api/go.go": { "maxDuration": 10 },
     "api/php.php": { "runtime": "vercel-php@0.7.1" },
-    "api/rust.rs": { "runtime": "vercel-rust" }
+    "api/rust.rs": { "runtime": "vercel-rust@0.1.0" }
   },
   "rewrites": [
     { "source": "/api/python", "destination": "/api/python.py" },
