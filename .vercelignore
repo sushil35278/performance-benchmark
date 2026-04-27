@@ -19,12 +19,23 @@ run_benchmark.py
 .env*.local
 
 # Compiled binaries and large folders
-target/
-api/target/
-**/__pycache__/
+target
+**/target
+api/target
+**/api/target
+__pycache__
+**/__pycache__
 *.pyc
 *.pyo
 *.pyd
+.venv
+**/.venv
+.env
+**/.env
+.next
+**/.next
+node_modules
+**/node_modules
 
 # Ensure configuration files are NOT ignored for detection
 !package.json
