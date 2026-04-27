@@ -1,0 +1,8 @@
+[project]
+name = "epic-benchmark-api"
+version = "0.1.0"
+description = "Python benchmark for the Epic Speed Race"
+dependencies = []
+
+[tool.uv]
+managed = true

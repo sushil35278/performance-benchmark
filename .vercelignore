@@ -1,9 +1,36 @@
+# Build outputs
+.next/
+out/
+build/
+dist/
+
+# Dependencies
 node_modules/
+**/node_modules/
+
+# Project-specific large files
 performance_test/
-.git/
-.vercel/
 run_benchmark.py
-Cargo.lock
-go.sum
+
+# Local config and logs
+.vercel/
 *.log
 .DS_Store
+.env*.local
+
+# Source code that isn't needed for the final bundle
+app/
+components/
+public/
+tsconfig.json
+next.config.mjs
+tailwind.config.ts
+postcss.config.mjs
+package-lock.json
+package.json
+go.mod
+Cargo.toml
+Cargo.lock
+
+# Ensure api directory is NOT ignored
+!api/
